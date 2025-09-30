@@ -2,6 +2,15 @@
 
 A user-friendly app that helps plan picnics by rating days for suitability based on customizable weather thresholds.
 
+## Screenshots
+
+### Main UI View
+![Main UI View](img/1.png)
+
+### Settings Panel and Historical Chart
+![Settings Panel](img/2.png)
+
+
 ## Features
 - 14-day weather forecast calendar with "ideal", "fair", "poor" day ratings
 - 10-year historical weather averages for selected dates
@@ -11,10 +20,19 @@ A user-friendly app that helps plan picnics by rating days for suitability based
 - Error boundary for graceful UI failures
 
 ## Installation
+### Backend
+1. Navigate to the backend directory:cd backend
+2. Install backend dependencies: npm install
+3. Start the backend server: npm start
 
-npm install
-npm run dev
+### Frontend
+1. Navigate to the frontend directory:cd frontend
+2. Install frontend dependencies:npm install
+3. Start the frontend development server:npm run dev
 
+### Notes
+- Start the backend server before the frontend to ensure API connectivity.
+- To build the frontend for production:
 
 ## Usage
 - Search and select a city
@@ -41,6 +59,14 @@ npm run dev
 - `/src/services`: API abstraction and geocoding logic
 - `/src/utils`: Utilities for caching, unit conversions, preferences
 - `/src/hooks`: Custom React hooks
+
+## Architecture and Design Decisions
+- The app separates concerns by having distinct frontend and backend modules to enhance modularity and scalability.
+- Customizable comfort thresholds allow personalized picnic suitability ratings, aiding user-specific experience.
+- Caching forecast data for 6 hours and historical data for 30 days reduces API calls and supports offline usage gracefully.
+- Error boundaries are implemented to handle UI failures without crashing the entire app.
+- Use of Open-Meteo API provides quick and reliable weather forecast and historical data.
+- The design supports extensibility with well-defined APIs and React hooks for easy integration of future features.
 
 ## Extensibility and Future Enhancements
 
