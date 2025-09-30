@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌧️ Falling Rain */
+@keyframes rainFall {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0.3;
+  }
+}
+.rain-drop {
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  animation: rainFall linear infinite;
+}
+
+/* ❄️ Falling Snow */
+@keyframes snowFall {
+  0% {
+    transform: translateY(-10px) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(30px);
+    opacity: 0;
+  }
+}
+.snow-flake {
+  position: absolute;
+  top: -10px;
+  font-size: 1.5rem;
+  animation: snowFall linear infinite;
+}
+
+body {
+  background: linear-gradient(135deg, #dbeafe, #fef9e7); /* soft blue → cream gradient */
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.sun {
+  position: absolute;
+  top: 60px;
+  right: 70px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, #fffbea 33%, #ffe277 70%, transparent 89%);
+  opacity: 0.88;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 70px 8px #ffe27799;
+}
+
+.sky-bg-sun {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  z-index: 0;
+  opacity: 0.7;
+  pointer-events: none;
+}
+.weather-animation-background {
+  width: 50px;
+  height: 50px;
+}
+.main-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.city-display {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-top: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.14);
+  padding: 18px;
+  margin: 18px;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Optional: hover effect */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(0,0,0,0.18);
+}
